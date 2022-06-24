@@ -1,0 +1,700 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: lampralexandros@gmail.com
+  description: This is a sample openApi document
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://wabli.netlify.app/
+  title: TempApi
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- description: wabli-contest-42206
+  url: http://83.212.100.226:3004/v1
+security:
+- {}
+tags:
+- description: not yet ready
+  name: parkinglot
+- description: not yet ready
+  name: rating
+- description: not yet ready
+  name: payment
+- description: not yet ready
+  name: rental
+- description: not yet ready
+  name: user
+paths:
+  /parkinglot:
+    post:
+      operationId: createparkinglot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/parkinglot'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/parkinglot'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - parkinglot
+      x-eov-operation-handler: controllers/ParkinglotController
+  /parkinglot/{parkinglotId}:
+    delete:
+      operationId: deleteparkinglot
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: parkinglotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - parkinglot
+      x-eov-operation-handler: controllers/ParkinglotController
+    get:
+      operationId: getparkinglot
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: parkinglotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/parkinglot'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - parkinglot
+      x-eov-operation-handler: controllers/ParkinglotController
+    put:
+      operationId: updateparkinglot
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: parkinglotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/parkinglot'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/parkinglot'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - parkinglot
+      x-eov-operation-handler: controllers/ParkinglotController
+  /parkinglot/getAll:
+    get:
+      operationId: getAllparkinglot
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/parkinglot'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - parkinglot
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/ParkinglotController
+  /rating:
+    post:
+      operationId: createrating
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rating'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - rating
+      x-eov-operation-handler: controllers/RatingController
+  /rating/{ratingId}:
+    delete:
+      operationId: deleterating
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: ratingId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - rating
+      x-eov-operation-handler: controllers/RatingController
+    get:
+      operationId: getrating
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: ratingId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - rating
+      x-eov-operation-handler: controllers/RatingController
+    put:
+      operationId: updaterating
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: ratingId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rating'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - rating
+      x-eov-operation-handler: controllers/RatingController
+  /rating/getAll:
+    get:
+      operationId: getAllrating
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/rating'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - rating
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/RatingController
+  /payment:
+    post:
+      operationId: createpayment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/payment'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/payment'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - payment
+      x-eov-operation-handler: controllers/PaymentController
+  /payment/{paymentId}:
+    delete:
+      operationId: deletepayment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: paymentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - payment
+      x-eov-operation-handler: controllers/PaymentController
+    get:
+      operationId: getpayment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: paymentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/payment'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - payment
+      x-eov-operation-handler: controllers/PaymentController
+    put:
+      operationId: updatepayment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: paymentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/payment'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/payment'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - payment
+      x-eov-operation-handler: controllers/PaymentController
+  /payment/getAll:
+    get:
+      operationId: getAllpayment
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/payment'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - payment
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/PaymentController
+  /rental:
+    post:
+      operationId: createrental
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rental'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rental'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - rental
+      x-eov-operation-handler: controllers/RentalController
+  /rental/{rentalId}:
+    delete:
+      operationId: deleterental
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: rentalId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - rental
+      x-eov-operation-handler: controllers/RentalController
+    get:
+      operationId: getrental
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: rentalId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rental'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - rental
+      x-eov-operation-handler: controllers/RentalController
+    put:
+      operationId: updaterental
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: rentalId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rental'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rental'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - rental
+      x-eov-operation-handler: controllers/RentalController
+  /rental/getAll:
+    get:
+      operationId: getAllrental
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/rental'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - rental
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/RentalController
+  /user:
+    post:
+      operationId: createuser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - user
+      x-eov-operation-handler: controllers/UserController
+  /user/{userId}:
+    delete:
+      operationId: deleteuser
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - user
+      x-eov-operation-handler: controllers/UserController
+    get:
+      operationId: getuser
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - user
+      x-eov-operation-handler: controllers/UserController
+    put:
+      operationId: updateuser
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - user
+      x-eov-operation-handler: controllers/UserController
+  /user/getAll:
+    get:
+      operationId: getAlluser
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/user'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - user
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/UserController
+components:
+  schemas:
+    parkinglot:
+      example:
+        ParkingLotAddress: ParkingLotAddress
+        RentingType: RentingType
+        ParkingLotPrice: 6.027456183070403
+        ParkingLotName: ParkingLotName
+        Rating: 0.8008281904610115
+        _id: _id
+        DistanceToDestination: DistanceToDestination
+      properties:
+        _id:
+          type: string
+        Rating:
+          format: double
+          type: number
+        DistanceToDestination:
+          type: string
+        ParkingLotName:
+          type: string
+        ParkingLotAddress:
+          type: string
+        ParkingLotPrice:
+          format: double
+          type: number
+        RentingType:
+          type: string
+      required:
+      - DistanceToDestination
+      - ParkingLotAddress
+      - ParkingLotName
+      - ParkingLotPrice
+      - Rating
+      - RentingType
+      type: object
+    rating:
+      example:
+        _id: _id
+      properties:
+        _id:
+          type: string
+      type: object
+    payment:
+      example:
+        ShLastName: ShLastName
+        Email: Email
+        ShAddress: ShAddress
+        FirstName: FirstName
+        ShZipCode: 1.4658129805029452
+        ShPhoneNumber: 6.027456183070403
+        PhoneNumber: 0.8008281904610115
+        PaymentMethod: PaymentMethod
+        _id: _id
+        LastName: LastName
+        ShEmail: ShEmail
+        ShFirstName: ShFirstName
+        Notes: Notes
+      properties:
+        _id:
+          type: string
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        Email:
+          type: string
+        PhoneNumber:
+          format: double
+          type: number
+        ShFirstName:
+          type: string
+        ShLastName:
+          type: string
+        ShEmail:
+          type: string
+        ShPhoneNumber:
+          format: double
+          type: number
+        ShAddress:
+          type: string
+        ShZipCode:
+          format: double
+          type: number
+        Notes:
+          type: string
+        PaymentMethod:
+          type: string
+      required:
+      - Email
+      - FirstName
+      - LastName
+      - Notes
+      - PaymentMethod
+      - PhoneNumber
+      - ShAddress
+      - ShEmail
+      - ShFirstName
+      - ShLastName
+      - ShPhoneNumber
+      - ShZipCode
+      type: object
+    rental:
+      example:
+        RentStart: RentStart
+        VehicleType: VehicleType
+        _id: _id
+        RentEnd: RentEnd
+      properties:
+        _id:
+          type: string
+        VehicleType:
+          type: string
+        RentStart:
+          type: string
+        RentEnd:
+          type: string
+      required:
+      - RentEnd
+      - RentStart
+      - VehicleType
+      type: object
+    user:
+      example:
+        _id: _id
+        UserDestination: UserDestination
+      properties:
+        _id:
+          type: string
+        UserDestination:
+          type: string
+      required:
+      - UserDestination
+      type: object
